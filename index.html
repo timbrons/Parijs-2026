@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parijs met team Brons — 4 t/m 7 juli</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#23303A;--muted:#7C7567;--sun:#F2A93B;--coral:#E8765A;--leaf:#4E9D6C;--sky:#3E8FB0;
+    --paper:#FFFFFF;--hair:#F0E4D2;--shadow:0 3px 18px rgba(196,135,74,.13);
+    --bleu:#0055A4;--blanc:#FFFFFF;--rouge:#EF4135;
+    --m1:#FFCD00;--m2:#0064B0;--m6:#6ECA97;--m7:#F49FB6;--m8:#D282BE;
+    --m9:#B6BD00;--m10:#DFB632;--m12:#00814F;--rer-b:#5291CE;--rer-c:#FFCD00;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{margin:0;color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16.5px;line-height:1.55;-webkit-font-smoothing:antialiased;background:linear-gradient(168deg,#FFEFD6 0%,#FFF7EC 32%,#FBF3E6 60%,#EAF4EE 100%);background-attachment:fixed;}
+  .wrap{max-width:680px;margin:0 auto;padding:0 18px 64px;}
+
+  .tricolore{display:flex;height:7px;margin:0 -18px;}
+  .tricolore span{flex:1;}
+  .tricolore .b{background:var(--bleu);} .tricolore .w{background:var(--blanc);} .tricolore .r{background:var(--rouge);}
+
+  /* ---------- Cover ---------- */
+  .cover{position:relative;overflow:hidden;margin:0 -18px;padding:46px 28px 38px;background:linear-gradient(135deg,#FFE0B0 0%,#FFD2A0 38%,#FFC18E 70%,#FBB1A0 100%);border-bottom:3px solid var(--ink);}
+  .cover::before{content:"";position:absolute;top:-90px;right:-60px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,#FFF1B8 0%,rgba(255,222,130,.55) 42%,rgba(255,222,130,0) 72%);pointer-events:none;}
+  .cover>*{position:relative;z-index:1;}
+  .eiffel-emblem{display:block;height:148px;width:auto;margin:0 0 14px;opacity:.95;}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#C24E33;margin:0 0 14px;}
+  .cover h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(42px,12.5vw,68px);line-height:.94;letter-spacing:-.01em;margin:0;color:#3A2418;}
+  .cover h1 em{display:block;font-style:italic;font-weight:400;font-size:clamp(18px,5vw,27px);line-height:1.25;color:#C24E33;margin-top:16px;letter-spacing:.005em;}
+  .dates{margin:18px 0 0;font-size:17px;font-weight:700;color:#5A3A24;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;}
+  .dates .yr{color:#A9764B;font-weight:500;}
+
+  /* paspoort-stempel */
+  .stamp{position:absolute;z-index:2;right:18px;top:20px;width:98px;height:98px;border-radius:50%;border:2px dashed #C24E33;color:#C24E33;transform:rotate(-11deg);opacity:.82;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;text-align:center;}
+  .stamp::after{content:"";position:absolute;inset:7px;border-radius:50%;border:1px solid rgba(194,78,51,.45);}
+  .stamp .s-top{font-size:10px;line-height:1;letter-spacing:.1em;}
+  .stamp b{font-family:'Fraunces',serif;font-size:22px;line-height:.9;letter-spacing:.04em;font-weight:600;}
+  .stamp .s-bot{font-size:8.5px;font-weight:700;letter-spacing:.1em;line-height:1.25;}
+
+  /* ---------- Legend ---------- */
+  .legend{margin:18px 0 0;padding:15px 17px;background:var(--paper);border:1px solid var(--hair);border-radius:16px;font-size:14px;color:var(--muted);box-shadow:var(--shadow);}
+  .legend strong{color:var(--ink);font-weight:600;}
+  .legend .badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0;}
+  .line{display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:21px;padding:0 6px;border-radius:6px;font-size:12px;font-weight:700;line-height:1;color:#fff;vertical-align:middle;}
+  .l-m1{background:var(--m1);color:#23303A;} .l-m2{background:var(--m2);} .l-m6{background:var(--m6);color:#0d3b2a;}
+  .l-m7{background:var(--m7);color:#4a1024;} .l-m8{background:var(--m8);color:#3a1338;} .l-m9{background:var(--m9);color:#33360a;}
+  .l-m10{background:var(--m10);color:#3a2c05;} .l-m12{background:var(--m12);} .l-rerb{background:var(--rer-b);}
+  .l-rerc{background:var(--rer-c);color:#3a2c05;} .l-rera{background:#E2231A;}
+
+  .kids-key{margin:12px 0 0;padding:12px 15px;border-radius:14px;font-size:14px;color:#5A4A38;background:#FFF6E9;border:1.5px dashed var(--coral);box-shadow:var(--shadow);}
+  .kids-key b{color:#C24E33;}
+
+  /* thuisbasis-kaart */
+  .basecamp{margin:14px 0 0;padding:15px 17px;border-radius:16px;background:var(--paper);border:1px solid var(--hair);border-left:5px solid var(--ink);box-shadow:var(--shadow);}
+  .basecamp .bc-head{font-weight:700;font-size:15px;color:var(--ink);display:flex;align-items:center;gap:7px;margin:0;}
+  .basecamp .addr{font-size:12.5px;color:var(--muted);margin:5px 0 0;}
+  .basecamp p.txt{font-size:14px;color:#5A5142;margin:8px 0 0;}
+  .basecamp strong{color:var(--ink);}
+  .basecamp .maps{--accent:var(--ink);}
+
+  /* ---------- Day ---------- */
+  .day{padding:40px 0 4px;--accent:var(--coral);}
+  .day--1{--accent:var(--coral);} .day--2{--accent:var(--leaf);} .day--3{--accent:var(--sky);}
+  .day-head{display:flex;align-items:flex-start;gap:16px;margin:0 0 6px;}
+  .day-num{font-family:'Fraunces',serif;font-weight:900;font-size:58px;line-height:.78;flex:none;width:58px;background:linear-gradient(150deg,var(--accent),var(--sun));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .day-meta{padding-top:5px;}
+  .day-meta .dow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 3px;display:inline-flex;align-items:center;gap:7px;}
+  .day-meta .dow::before{content:"";width:18px;height:3px;border-radius:3px;background:var(--accent);}
+  .day-meta h2{font-family:'Fraunces',serif;font-weight:600;font-size:26px;line-height:1.05;margin:0;letter-spacing:-.01em;}
+  .day-narr{color:var(--muted);font-size:15px;margin:8px 0 18px;}
+
+  .anniv{position:relative;overflow:hidden;margin:0 0 20px;padding:17px 19px;border-radius:16px;background:linear-gradient(120deg,#FBE7B0 0%,#F6D78C 46%,#F0C9A2 100%);border:1.5px solid #CC9E3E;box-shadow:var(--shadow);}
+  .anniv::before{content:"";position:absolute;top:-44px;right:-30px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.75),rgba(255,255,255,0) 70%);pointer-events:none;}
+  .anniv>*{position:relative;}
+  .anniv-eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#A9772A;margin:0 0 4px;}
+  .anniv h3{font-family:'Fraunces',serif;font-weight:600;font-size:21px;line-height:1.15;margin:0;color:#6E4A1C;}
+  .anniv p{font-size:14px;color:#7C5C2E;margin:6px 0 0;}
+
+  /* reis-nodes */
+  .dot.travel{border-radius:4px;border-color:var(--ink);}
+  .dot.travel.end{background:var(--ink);}
+  .stop-card.travel{background:#FBF4E7;}
+  .stop-card.travel::before{background:var(--ink);}
+  .stop-card.travel .stop-time{color:#6A5F4C;}
+  .stop-card.travel h3{display:flex;align-items:center;gap:8px;}
+
+  /* vertrek-banner */
+  .depart{position:relative;overflow:hidden;margin:34px 0 0;padding:21px 21px;border-radius:18px;background:linear-gradient(135deg,#26343E 0%,#33525A 100%);color:#EDEAE2;border:2px solid var(--ink);}
+  .depart::before{content:"";position:absolute;top:-50px;right:-40px;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle,rgba(242,169,59,.28),rgba(242,169,59,0) 70%);pointer-events:none;}
+  .depart>*{position:relative;}
+  .depart .dep-eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#F2A93B;margin:0 0 6px;}
+  .depart h2{font-family:'Fraunces',serif;font-weight:600;font-size:21px;margin:0;color:#fff;display:flex;align-items:center;gap:9px;}
+  .depart p{font-size:14px;color:#D9D5CC;margin:8px 0 0;}
+
+  /* ---------- Timeline ---------- */
+  .row{display:grid;grid-template-columns:30px 1fr;column-gap:14px;}
+  .rail{position:relative;}
+  .rail::before{content:"";position:absolute;left:14px;top:0;bottom:0;width:3px;background:var(--accent);opacity:.32;transform:translateX(-50%);border-radius:3px;}
+  .row.first .rail::before{top:14px;}
+  .row.last .rail::before{bottom:auto;height:14px;}
+  .dot{position:absolute;left:14px;top:7px;width:16px;height:16px;border-radius:50%;background:var(--paper);border:3px solid var(--accent);transform:translateX(-50%);z-index:2;box-shadow:0 0 0 4px rgba(255,255,255,.6);}
+  .dot.end{background:var(--accent);}
+
+  .stop-body{padding:0 0 4px;}
+  .stop-card{position:relative;background:var(--paper);border:1px solid var(--hair);border-radius:16px;padding:14px 16px;margin:0 0 2px;box-shadow:var(--shadow);overflow:hidden;}
+  .stop-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--accent);}
+  .stop-time{font-variant-numeric:tabular-nums;font-weight:700;font-size:13px;color:var(--accent);letter-spacing:.02em;margin:0 0 2px;}
+  .stop-card h3{font-size:18px;font-weight:700;margin:0;line-height:1.2;}
+  .stop-card .addr{font-size:12.5px;color:var(--muted);margin:3px 0 0;}
+  .stop-card .desc{font-size:14.5px;margin:8px 0 0;}
+  .stop-card .meta{font-size:12.5px;color:var(--muted);margin:9px 0 0;display:flex;flex-wrap:wrap;gap:5px 12px;align-items:center;}
+  .stop-card .meta .station{display:inline-flex;align-items:center;gap:5px;flex-wrap:wrap;}
+  .tag{display:inline-block;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:20px;padding:3px 11px;margin:10px 6px 0 0;}
+
+  /* google maps link */
+  .maps{display:inline-flex;align-items:center;gap:5px;margin:11px 0 0;font-size:12.5px;font-weight:600;color:var(--accent);text-decoration:none;padding:5px 11px;border:1px solid var(--accent);border-radius:20px;}
+  .maps:hover{background:var(--accent);color:#fff;}
+
+  .kids{margin:11px 0 2px;padding:12px 14px;border-radius:13px;background:#FFF7EA;border:1.5px dashed var(--accent);}
+  .kids .k-head{font-weight:700;font-size:14px;color:var(--accent);display:flex;align-items:center;gap:7px;margin:0;}
+  .kids .fact{font-size:14px;font-style:italic;color:#6E5E48;margin:6px 0 0;}
+  .kids .task{font-size:14.5px;color:#4A3F30;margin:5px 0 0;}
+
+  .leg-body{padding:11px 2px 13px;}
+  .leg-mode{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:var(--ink);}
+  .leg-mode .ic{font-size:16px;}
+  .leg-mode .fr{font-weight:500;font-style:italic;color:var(--muted);}
+  .leg-mode .dur{font-variant-numeric:tabular-nums;color:var(--muted);font-weight:500;}
+  .leg-detail{font-size:13px;color:var(--muted);margin:5px 0 0;}
+  .leg-detail .badges{display:inline-flex;gap:5px;flex-wrap:wrap;vertical-align:middle;margin:0 2px;}
+
+  /* ---------- Tips ---------- */
+  .tips{position:relative;overflow:hidden;margin:44px 0 0;padding:24px 22px;border-radius:20px;background:linear-gradient(135deg,#FFD98A 0%,#FFC58C 50%,#FBA98E 100%);border:2px solid var(--ink);color:#3A2418;}
+  .tips::before{content:"";position:absolute;bottom:-70px;left:-40px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.5),rgba(255,255,255,0) 70%);pointer-events:none;}
+  .tips>*{position:relative;z-index:1;}
+  .tips h2{font-family:'Fraunces',serif;font-weight:600;font-size:22px;margin:0 0 14px;color:#3A2418;display:flex;align-items:center;gap:9px;}
+  .tips ul{margin:0;padding:0;list-style:none;}
+  .tips li{position:relative;padding:0 0 0 24px;margin:0 0 12px;font-size:14.5px;line-height:1.45;color:#523620;}
+  .tips li:last-child{margin-bottom:0;}
+  .tips li::before{content:"";position:absolute;left:0;top:6px;width:10px;height:10px;border-radius:50%;background:#C24E33;}
+  .tips li strong{color:#2A1810;font-weight:700;}
+
+  .foot{margin:24px 2px 0;font-size:13px;color:var(--muted);text-align:center;}
+  .foot .bon{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--coral);display:block;margin:0 0 4px;}
+
+  @media (max-width:440px){
+    .cover{padding:40px 20px 32px;}
+    .eiffel-emblem{height:120px;}
+    .stamp{width:82px;height:82px;top:16px;right:12px;}
+    .stamp b{font-size:18px;}
+    .day-num{font-size:50px;width:50px;}
+    .day-meta h2{font-size:22px;}
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .day{opacity:0;transform:translateY(14px);animation:rise .6s ease forwards;}
+    .day:nth-of-type(1){animation-delay:.05s;}.day:nth-of-type(2){animation-delay:.12s;}.day:nth-of-type(3){animation-delay:.19s;}
+    @keyframes rise{to{opacity:1;transform:none;}}
+  }
+  @media print{
+    body{background:#fff;}
+    .cover,.tips,.anniv,.tricolore,.depart{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .day,.tips{opacity:1!important;transform:none!important;}
+    .stop-card,.legend,.kids{break-inside:avoid;}
+    .maps{border-color:#999;color:#444;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="tricolore"><span class="b"></span><span class="w"></span><span class="r"></span></div>
+
+  <header class="cover">
+    <div class="stamp"><span class="s-top">★ ★ ★</span><b>PARIS</b><span class="s-bot">JUILLET<br>2026</span></div>
+
+    <img class="eiffel-emblem" alt="Eiffeltoren" src="data:image/png;base64,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">
+
+    <p class="eyebrow">💍 Trouwdag Tim &amp; Claire in Parijs</p>
+    <h1>Parijs<em>met Tim, Claire, Alicia &amp; Jaimey</em></h1>
+    <p class="dates">zaterdag 4 — dinsdag 7 juli <span class="yr">2026</span></p>
+  </header>
+
+  <div class="legend">
+    <strong>Zo lees je het schema:</strong> elke dag is een route met haltes; tussen de stops staat hoe je reist en hoe lang het duurt. De meeste afstanden zijn lopend te doen. Reistijden zijn schattingen — check <strong>Bonjour RATP</strong> of <strong>Citymapper</strong> voor de actuele route.
+    <div class="badges">
+      <span class="line l-m1">M1</span><span class="line l-m2">M2</span><span class="line l-m6">M6</span>
+      <span class="line l-m7">M7</span><span class="line l-m8">M8</span><span class="line l-m9">M9</span>
+      <span class="line l-m10">M10</span><span class="line l-m12">M12</span>
+      <span class="line l-rera">RER A</span><span class="line l-rerb">RER B</span><span class="line l-rerc">RER C</span>
+    </div>
+  </div>
+
+  <div class="kids-key">🔎 <b>Voor Alicia &amp; Jaimey:</b> bij elke stop staat een geel kadertje met een weetje en een kleine missie. Lukt het jullie om ze alle drie de dagen te volbrengen?</div>
+
+  <div class="basecamp">
+    <p class="bc-head">⛺ Thuisbasis · Camping Paris-Est</p>
+    <p class="addr">110 Boulevard des Alliés, 94500 Champigny-sur-Marne · check-in vanaf 15:00, check-out tot 10:00</p>
+    <p class="txt">De stad in: bus <strong>101</strong> vanaf de campingingang naar RER-station <strong>Joinville-le-Pont</strong>, daarna <span class="line l-rera">RER A</span> het centrum in (± 45 min totaal). Een taxi naar het centrum duurt ± 20 min. 's Avonds laat rijdt de RER A door tot ± 01:00 — anders is een taxi terug handig.</p>
+    <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Camping%20Paris%20Est%20110%20Boulevard%20des%20Allies%2094500%20Champigny-sur-Marne" target="_blank" rel="noopener">📍 Google Maps</a>
+  </div>
+
+  <!-- ============ DAG 1 ============ -->
+  <section class="day day--1">
+    <div class="day-head">
+      <div class="day-num">1</div>
+      <div class="day-meta">
+        <p class="dow">Zaterdag · aankomst</p>
+        <h2>Montmartre &amp; de Seine</h2>
+      </div>
+    </div>
+    <p class="day-narr">Heenreis en zachte landing: 's ochtends rijden vanuit Almere, daarna de stad in voor Montmartre en 's avonds de boottocht met de sprankelende toren als afsluiter.</p>
+
+    <div class="row first">
+      <div class="rail"><span class="dot travel"></span></div>
+      <div class="stop-body">
+        <div class="stop-card travel">
+          <p class="stop-time">06:00</p>
+          <h3>🚗 Vertrek uit Almere</h3>
+          <p class="desc">Vroeg weg om de drukte voor te zijn en ruim op tijd in Parijs aan te komen.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rail"></div>
+      <div class="leg-body">
+        <span class="leg-mode"><span class="ic">🚗</span> Autorit <span class="fr">· en voiture</span> <span class="dur">· ± 5,5–6 u · ~550 km</span></span>
+        <p class="leg-detail">Reken een tussenstop in om de benen te strekken en te lunchen. Check onderweg de actuele reistijd in je navigatie-app.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rail"><span class="dot travel"></span></div>
+      <div class="stop-body">
+        <div class="stop-card travel">
+          <p class="stop-time">± 12:00</p>
+          <h3>⛺ Aankomst Camping Paris-Est</h3>
+          <p class="addr">110 Boulevard des Alliés, Champigny-sur-Marne</p>
+          <p class="desc">Even landen, lunchen en uitpakken. Check-in is vanaf 15:00; tot die tijd kan de bagage bij de receptie, zodat jullie alvast fris de stad in kunnen.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rail"></div>
+      <div class="leg-body">
+        <span class="leg-mode"><span class="ic">🚌</span> Bus 101 + <span class="badges"><span class="line l-rera">RER A</span></span> <span class="dur">· ± 45 min</span></span>
+        <p class="leg-detail">Bus 101 vanaf de camping naar Joinville-le-Pont, dan met de RER A het centrum in en door naar Montmartre. Met de kinderen sneller? Een taxi doet ± 20 min.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rail"><span class="dot"></span></div>
+      <div class="stop-body">
+        <div class="stop-card">
+          <p class="stop-time">16:00 — 18:00</p>
+          <h3>Sacré-Cœur &amp; Place du Tertre</h3>
+          <p class="addr">35 Rue du Chevalier de la Barre, 75018</p>
+          <p class="desc">Gratis panorama over heel Parijs vanaf de trappen. Neem de funiculaire omhoog om de 270 treden te vermijden. Dwaal daarna door de kunstenaarspleintjes.</p>
+          <div class="kids">
+            <p class="k-head">🔎 Missie voor Alicia &amp; Jaimey</p>
+            <p class="fact">Wist je dat? De witte stenen van de kerk worden vanzelf wéér witter als het regent.</p>
+            <p class="task">Zoek op Place du Tertre een schilder aan het werk en kies samen jullie mooiste schilderij.</p>
+          </div>
+          <div class="meta">
+            <span class="station">Halte: Anvers <span class="line l-m2">M2</span> + funiculaire, of Abbesses <span class="line l-m12">M12</span></span>
+          </div>
+          <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Sacre-Coeur%2035%20Rue%20du%20Chevalier%20de%20la%20Barre%2075018%20Paris" target="_blank" rel="noopener">📍 Google Maps</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rail"></div>
+      <div class="leg-body">
+        <span class="leg-mode"><span class="ic">🚶</span> Lopen <span class="fr">· à pied</span> <span class="dur">· ± 10 min</span></span>
+        <p class="leg-detail">Bergafwaarts door Montmartre, via Place du Tertre en Rue Lepic — een van de mooiste wandelingetjes van de buurt.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rail"><span class="dot"></span></div>
+      <div class="stop-body">
+        <div class="stop-card">
+          <p class="stop-time">18:30 — 20:00</p>
+          <h3>Diner: Chez Marie</h3>
+          <p class="addr">22 Rue Lepic, 75018 · ★ 4,8</p>
+          <p class="desc">Gezellig familierestaurant, klassiek Frans (uiensoep, confit) maar ook burgers en lasagne voor de kinderen.</p>
+          <div class="kids">
+            <p class="k-head">🍽️ Durfmoment voor Alicia &amp; Jaimey</p>
+            <p class="task">Wie proeft er iets nieuws? Een echte Franse uiensoep — of durven jullie slakjes (escargots)?</p>
+          </div>
+          <span class="tag">Vooraf reserveren</span>
+          <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Chez%20Marie%2022%20Rue%20Lepic%2075018%20Paris" target="_blank" rel="noopener">📍 Google Maps</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rail"></div>
+      <div class="leg-body">
+        <span class="leg-mode"><span class="ic">🚇</span> Metro <span class="dur">· ± 25–30 min · 1 overstap</span></span>
+        <p class="leg-detail">Van Abbesses <span class="badges"><span class="line l-m12">M12</span></span> of Blanche <span class="badges"><span class="line l-m2">M2</span></span> naar Alma-Marceau <span class="badges"><span class="line l-m9">M9</span></span> / RER C Pont de l'Alma. Met de kinderen 's avonds is een taxi (± 20 min) ook een prima optie.</p>
+      </div>
+    </div>
+
+    <div class="row last">
+      <div class="rail"><span class="dot end"></span></div>
+      <div class="stop-body">
+        <div class="stop-card">
+          <p class="stop-time">21:00 — 22:20</p>
+          <h3>Boottocht · Bateaux-Mouches</h3>
+          <p class="addr">Port de la Conférence, Pont de l'Alma, 75008</p>
+          <p class="desc">Cruise van ± 1u10 langs de hoogtepunten. Rond 22:00 sprankelt de Eiffeltoren — spectaculair vanaf het water.</p>
+          <div class="kids">
+            <p class="k-head">⛴️ Missie voor Alicia &amp; Jaimey</p>
+            <p class="fact">Wist je dat? De Seine heeft wel 37 bruggen in Parijs.</p>
+            <p class="task">Tel hardop hoeveel bruggen jullie onderdoor varen — en zwaai naar de mensen op de kant!</p>
+          </div>
+          <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Bateaux-Mouches%20Port%20de%20la%20Conference%20Pont%20de%20l%27Alma%2075008%20Paris" target="_blank" rel="noopener">📍 Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DAG 2 ============ -->
+  <section class="day day--2">
+    <div class="day-head">
+      <div class="day-num">2</div>
+      <div class="day-meta">
+        <p class="dow">Zondag</p>
+        <h2>Louvre, lunch &amp; parken</h2>
+      </div>
+    </div>
+    <p class="day-narr">De grote ontdekkingsdag: kunst in het Louvre, een vrolijke lunch, de parken, en als afsluiter de Notre-Dame van buiten.</p>
+
+    <div class="row first">
+      <div class="rail"><span class="dot"></span></div>
+      <div class="stop-body">
+        <div class="stop-card">
+          <p class="stop-time">09:30 — 12:00</p>
+          <h3>Louvre</h3>
+          <p class="addr">Rue de Rivoli, 75001 · ★ 4,7</p>
+          <p class="desc">Maak er een speurtocht van voor de kinderen. Tickets vooraf boeken.</p>
+          <div class="kids">
+            <p class="k-head">🔎 Speurtocht voor Alicia &amp; Jaimey</p>
+            <p class="fact">Wist je dat? De grote glazen piramide bestaat uit honderden ruitjes.</p>
+            <p class="task">Vind de Mona Lisa (ze is kleiner dan je denkt!), een echte mummie én de sfinx.</p>
+          </div>
+          <div class="meta">
+            <span class="station">Halte: Palais Royal–Musée du Louvre <span class="line l-m1">M1</span></span>
+          </div>
+          <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Musee%20du%20Louvre%20Rue%20de%20Rivoli%2075001%20Paris" target="_blank" rel="noopener">📍 Google Maps</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rail"></div>
+      <div class="leg-body">
+        <span class="leg-mode"><span class="ic">🚶</span> Lopen <span class="fr">· à pied</span> <span class="dur">· ± 20 min</span></span>
+        <p class="leg-detail">Steek de Seine over via de Pont des Arts naar het Quartier Latin — een mooie route. Liever metro? <span class="badges"><span class="line l-m1">M1</span></span> + <span class="badges"><span class="line l-rerb">RER B</span></span>, ± 12 min.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rail"><span class="dot"></span></div>
+      <div class="stop-body">
+        <div class="stop-card">
+          <p class="stop-time">12:30 — 13:45</p>
+          <h3>Lunch: Le Choupinet</h3>
+          <p class="addr">58 Bd Saint-Michel, 75006 · ★ 4,4</p>
+          <p class="desc">Vrolijke tent vol teddyberen met Franse comfort food. Pal naast het park.</p>
+          <div class="kids">
+            <p class="k-head">🧸 Teltaak voor Alicia &amp; Jaimey</p>
+            <p class="task">Hoeveel teddyberen kunnen jullie in het restaurant spotten? Tel ze allebei en vergelijk!</p>
+          </div>
+          <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Le%20Choupinet%2058%20Boulevard%20Saint-Michel%2075006%20Paris" target="_blank" rel="noopener">📍 Google Maps</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rail"></div>
+      <div class="leg-body">
+        <span class="leg-mode"><span class="ic">🚶</span> Lopen <span class="fr">· à pied</span> <span class="dur">· ± 4 min</span></span>
+        <p class="leg-detail">Recht het Jardin du Luxembourg in — de ingang ligt om de hoek.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rail"><span class="dot"></span></div>
+      <div class="stop-body">
+        <div class="stop-card">
+          <p class="stop-time">14:00 — 15:15</p>
+          <h3>Jardin du Luxembourg</h3>
+          <p class="addr">75006 · ★ 4,7</p>
+          <p class="desc">Houten zeilbootjes te huur op de grote vijver, plus speeltuin, carrousel en poppenkast. Even bijkomen voor de volwassenen.</p>
+          <div class="kids">
+            <p class="k-head">⛵ Missie voor Alicia &amp; Jaimey</p>
+            <p class="task">Huur een houten zeilbootje en duw het met een stok over de grote vijver. Wie van jullie wint de race?</p>
+          </div>
+          <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Jardin%20du%20Luxembourg%2075006%20Paris" target="_blank" rel="noopener">📍 Google Maps</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rail"></div>
+      <div class="leg-body">
+        <span class="leg-mode"><span class="ic">🚶</span> Lopen <span class="fr">· à pied</span> <span class="dur">· ± 10 min</span></span>
+        <p class="leg-detail">Door het Quartier Latin, langs het Panthéon, naar het gezellige pleintje Place de l'Estrapade.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rail"><span class="dot"></span></div>
+      <div class="stop-body">
+        <div class="stop-card">
+          <p class="stop-time">15:30 — 15:50</p>
+          <h3>De deur uit Emily in Paris</h3>
+          <p class="addr">1 Place de l'Estrapade, 75005 · korte foto-stop</p>
+          <p class="desc">De iconische voordeur van Emily's appartement uit de serie, aan een charmant pleintje. Het café en de bakkerij uit de show liggen er vlakbij.</p>
+          <div class="kids">
+            <p class="k-head">📸 Speciaal voor Alicia</p>
+            <p class="fact">Wist je dat? Op dit pleintje is de hitserie Emily in Paris opgenomen.</p>
+            <p class="task">Maak een foto bij de beroemde voordeur — en pak een pain au chocolat bij de bakkerij uit de serie om de hoek.</p>
+          </div>
+          <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=1%20Place%20de%20l%27Estrapade%2075005%20Paris" target="_blank" rel="noopener">📍 Google Maps</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rail"></div>
+      <div class="leg-body">
+        <span class="leg-mode"><span class="ic">🚶</span> Lopen <span class="fr">· à pied</span> <span class="dur">· ± 12 min</span></span>
+        <p class="leg-detail">Door het Quartier Latin en over de Seine naar Île de la Cité, waar de Notre-Dame staat.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rail"><span class="dot"></span></div>
+      <div class="stop-body">
+        <div class="stop-card">
+          <p class="stop-time">16:05 — 16:40</p>
+          <h3>Notre-Dame (van buiten)</h3>
+          <p class="addr">Parvis Notre-Dame, Île de la Cité, 75004 · gratis</p>
+          <p class="desc">De gerestaureerde kathedraal van buiten bewonderen — geen rij, geen reservering nodig. Het plein, de imposante voorgevel met de twee torens en de waterspuwers zijn van buitenaf al indrukwekkend. Loop ook even naar de zijkant voor het zicht op de nieuwe spits.</p>
+          <div class="kids">
+            <p class="k-head">🔔 Missie voor Alicia &amp; Jaimey</p>
+            <p class="fact">Wist je dat? Vóór de kerk ligt 'Point Zéro' — het punt vanwaaruit alle afstanden in Frankrijk worden gemeten.</p>
+            <p class="task">Zoek de bronzen Point Zéro-steen op het plein en ga erop staan — en speur naar de waterspuwers (gargouilles) hoog aan de gevel.</p>
+          </div>
+          <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Cathedrale%20Notre-Dame%20de%20Paris%206%20Parvis%20Notre-Dame%2075004%20Paris" target="_blank" rel="noopener">📍 Google Maps</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rail"></div>
+      <div class="leg-body">
+        <span class="leg-mode"><span class="ic">🚶</span> Lopen <span class="fr">· à pied</span> <span class="dur">· ± 15 min</span></span>
+        <p class="leg-detail">Terug over de Seine naar Rue Mouffetard, een levendige, gezellige marktstraat vol terrasjes — leuk om even te slenteren voor het eten.</p>
+      </div>
+    </div>
+
+    <div class="row last">
+      <div class="rail"><span class="dot end"></span></div>
+      <div class="stop-body">
+        <div class="stop-card">
+          <p class="stop-time">19:00 — 20:30</p>
+          <h3>Diner: Quartier Latin</h3>
+          <p class="addr">1 Rue Mouffetard, 75005 · ★ 4,8</p>
+          <p class="desc">Gezellig Italiaans restaurantje bovenaan de Rue Mouffetard, met verse pizza's en pasta — een zekerheidje voor de kinderen. Iets eerder eten? Les Baux de Paris (71 Rue Mouffetard) is een familiezaak met Grieks-Franse gerechten, al open vanaf ± 17:45.</p>
+          <div class="kids">
+            <p class="k-head">🍝 Voor Alicia &amp; Jaimey</p>
+            <p class="task">Slenter eerst over de Rue Mouffetard en kies samen alvast een toetje uit voor na het eten.</p>
+          </div>
+          <span class="tag">Reserveren aangeraden</span>
+          <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Quartier%20Latin%20restaurant%201%20Rue%20Mouffetard%2075005%20Paris" target="_blank" rel="noopener">📍 Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DAG 3 ============ -->
+  <section class="day day--3">
+    <div class="day-head">
+      <div class="day-num">3</div>
+      <div class="day-meta">
+        <p class="dow">Maandag · jullie trouwdag</p>
+        <h2>Eiffeltoren &amp; Arc de Triomphe</h2>
+      </div>
+    </div>
+    <p class="day-narr">De west-kant gebundeld, met de Eiffeltoren als hoogtepunt en lunch op loopafstand. Let op: musea als d'Orsay zijn maandag gesloten.</p>
+
+    <div class="anniv">
+      <p class="anniv-eyebrow">✦ Speciale dag</p>
+      <h3>10 jaar getrouwd 💍🥂</h3>
+      <p>Jullie trouwdag in Parijs! Een mooie dag om er met z'n vieren iets bijzonders van te maken — een toost met uitzicht op de toren, of een romantisch diner als afsluiter.</p>
+    </div>
+
+    <div class="row first">
+      <div class="rail"><span class="dot"></span></div>
+      <div class="stop-body">
+        <div class="stop-card">
+          <p class="stop-time">10:00 — 12:30</p>
+          <h3>Eiffeltoren</h3>
+          <p class="addr">Champ de Mars, 75007 · ★ 4,7</p>
+          <p class="desc">Boek vooraf een tijdslot. Naar de top of de trap tot de 2e verdieping. Picknick op het Champ de Mars of de mooiste foto vanaf het Trocadéro.</p>
+          <div class="kids">
+            <p class="k-head">🗼 Missie voor Alicia &amp; Jaimey</p>
+            <p class="fact">Wist je dat? De toren is in 1889 gebouwd en heeft maar liefst 1665 treden naar de top!</p>
+            <p class="task">Op de toren staan 72 namen van wetenschappers gegraveerd — vind er samen eentje.</p>
+          </div>
+          <span class="tag">Tickets vooraf boeken</span>
+          <div class="meta">
+            <span class="station">Halte: Bir-Hakeim <span class="line l-m6">M6</span> · RER C Champ de Mars</span>
+          </div>
+          <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Tour%20Eiffel%20Champ%20de%20Mars%2075007%20Paris" target="_blank" rel="noopener">📍 Google Maps</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rail"></div>
+      <div class="leg-body">
+        <span class="leg-mode"><span class="ic">🚶</span> Lopen <span class="fr">· à pied</span> <span class="dur">· ± 10 min</span></span>
+        <p class="leg-detail">Vanaf het gazon zo de Avenue de la Bourdonnais in.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rail"><span class="dot"></span></div>
+      <div class="stop-body">
+        <div class="stop-card">
+          <p class="stop-time">13:00 — 14:30</p>
+          <h3>Lunch: Chez Pippo</h3>
+          <p class="addr">31 Av. de la Bourdonnais, 75007 · ★ 4,6</p>
+          <p class="desc">Italiaans familierestaurant op een paar passen van het Eiffel-gazon. Pizza en verse pasta — ideaal voor de kinderen.</p>
+          <div class="kids">
+            <p class="k-head">🍕 Voor Alicia &amp; Jaimey</p>
+            <p class="task">Kies samen jullie eigen pizza of pasta uit de kaart — bon appétit!</p>
+          </div>
+          <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Chez%20Pippo%2031%20Avenue%20de%20la%20Bourdonnais%2075007%20Paris" target="_blank" rel="noopener">📍 Google Maps</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rail"></div>
+      <div class="leg-body">
+        <span class="leg-mode"><span class="ic">🚇</span> Metro <span class="dur">· ± 20 min · geen overstap</span></span>
+        <p class="leg-detail">Loop naar Bir-Hakeim <span class="badges"><span class="line l-m6">M6</span></span> en neem M6 (richting Charles de Gaulle–Étoile) rechtstreeks naar de Arc de Triomphe.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rail"><span class="dot"></span></div>
+      <div class="stop-body">
+        <div class="stop-card">
+          <p class="stop-time">15:00 — 16:15</p>
+          <h3>Arc de Triomphe</h3>
+          <p class="addr">Place Charles de Gaulle, 75008 · ★ 4,7</p>
+          <p class="desc">Beklim het dak voor een geweldig uitzicht over de Champs-Élysées — rustiger en goedkoper dan de Eiffeltoren.</p>
+          <div class="kids">
+            <p class="k-head">⭐ Slotmissie voor Alicia &amp; Jaimey</p>
+            <p class="fact">Wist je dat? Onder de boog brandt een vlam die nooit uitgaat.</p>
+            <p class="task">Tel de treden naar het dak (het zijn er 284!) en tel daarboven hoeveel straten op het plein uitkomen.</p>
+          </div>
+          <div class="meta">
+            <span class="station">Halte: Charles de Gaulle–Étoile <span class="line l-m1">M1</span> <span class="line l-m2">M2</span> <span class="line l-m6">M6</span></span>
+          </div>
+          <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Arc%20de%20Triomphe%20Place%20Charles%20de%20Gaulle%2075008%20Paris" target="_blank" rel="noopener">📍 Google Maps</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="rail"></div>
+      <div class="leg-body">
+        <span class="leg-mode"><span class="ic">🚇</span> Metro <span class="dur">· ± 15–20 min</span></span>
+        <p class="leg-detail">Vanaf Charles de Gaulle–Étoile met <span class="badges"><span class="line l-m6">M6</span></span> richting de Eiffeltoren (halte Bir-Hakeim), of een taxi. Even bijkomen voor het diner.</p>
+      </div>
+    </div>
+
+    <div class="row last">
+      <div class="rail"><span class="dot end"></span></div>
+      <div class="stop-body">
+        <div class="stop-card">
+          <p class="stop-time">19:30 — 21:30</p>
+          <h3>Trouwdag-diner: FRAME Brasserie 🥂</h3>
+          <p class="addr">18 Av. de Suffren, 75015 · ★ 4,2</p>
+          <p class="desc">Stijlvol én kindvriendelijk, met uitzicht op de Eiffeltoren door het raam — je ziet 'm vanaf je tafel sprankelen. Een jubileum pakken ze graag feestelijk aan (vraag gerust om een toetje met kaarsje). Wil je een nóg spectaculairder uitzicht? Francette (1 Port de Suffren) ligt aan de Seine, maar vraagt een aanbetaling per persoon en is wat drukker.</p>
+          <div class="kids">
+            <p class="k-head">🗼 Voor Alicia &amp; Jaimey</p>
+            <p class="task">Houd de Eiffeltoren in de gaten — elk heel uur na zonsondergang gaat hij vijf minuten lang sprankelen!</p>
+          </div>
+          <span class="tag">Vooraf reserveren · vraag een tafel bij het raam</span>
+          <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=FRAME%20Brasserie%2018%20Avenue%20de%20Suffren%2075015%20Paris" target="_blank" rel="noopener">📍 Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VERTREK ============ -->
+  <section class="depart">
+    <p class="dep-eyebrow">✦ Dinsdag 7 juli · vertrek</p>
+    <h2>🚗 Op naar Parc le Duc</h2>
+    <p>07:30 vertrek vanaf Camping Paris-Est richting Vacquières (Zuid-Frankrijk). Reken op ± 7–7,5 uur rijden (~720 km) — een echte roadtrip-dag. Tip: plan een paar stops en check de actuele reistijd onderweg.</p>
+  </section>
+
+  <!-- ============ TIPS ============ -->
+  <section class="tips">
+    <h2>🧺 Goed om te weten</h2>
+    <ul>
+      <li><strong>Vooraf boeken:</strong> Eiffeltoren, Louvre en Arc de Triomphe online reserveren scheelt enorm in de rij. Ook de restaurants (zeker Chez Marie en het trouwdag-diner) even vooraf reserveren.</li>
+      <li><strong>Vervoer:</strong> contactloos betalen kan in de metro (Île-de-France Mobilités), of koop een setje tickets. Kinderen onder 4 reizen gratis, 4–9 jaar half tarief.</li>
+      <li><strong>Museum Pass:</strong> Alicia en Jaimey (onder 18) hebben in de meeste rijksmusea gratis toegang — reken voor jullie tweeën even na of een pass loont.</li>
+      <li><strong>Zomertip:</strong> neem water en zonnebrand mee, en schuif gerust met het tempo. Een lange lunch of extra ijsje onderweg is op een warme julidag ook een prima plan.</li>
+    </ul>
+  </section>
+
+  <p class="foot"><span class="bon">Bon voyage — fijne reis, team Brons! 🗼</span>Reistijden en metroroutes zijn schattingen — controleer de actuele route in Bonjour RATP of Citymapper.</p>
+
+</div>
+</body>
+</html>
